@@ -1,0 +1,43 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 292px;
+  height: 100vh;
+  background-color: #fff;
+  color: black;
+  padding-top: 0px;
+  box-shadow: 0 2px 20px rgba(1, 41, 112, 0.1);
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dashboard-nav-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.dashboard-item {
+ 
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  list-style: none;
+  width: 260px;
+}
+
+.dashboard-item a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  color: #fff;
+}
+.dashboard-icon {
+  height: 24px;
+  margin-right: 12px;
+}
