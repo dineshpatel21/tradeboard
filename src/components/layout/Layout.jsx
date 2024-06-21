@@ -5,6 +5,8 @@ import RightSidebar from "../navbar/RightSidebar";
 import MainSection from "../../components/mainsection/MainSection";
 import Header from "../../components/header/Header";
 import MyContext from "../../context/MyContext";
+
+
 function Layout() {
   const { isSideBarOpen, toggleSideBar } = useContext(MyContext);
   return (

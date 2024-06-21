@@ -21,13 +21,29 @@ function MainSection() {
 
       <div className="today-my-rule-section">
         <div className="today-journal">
-          <div className="today-journal-heading">
-            Today’s Journal <span>(Saving)</span>
+          <div>
+            <div className="today-journal-heading">
+              Today’s Journal <span>(Saving)</span>
+            </div>
+            <RichText />
           </div>
-          <RichText />
           <Attach />
         </div>
         <MyRule />
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <h2>Trade Log</h2>
+        <div>
+          <button>
+            <img src="" alt="" />
+            <span>Add Trade</span>
+          </button>
+          <button>
+            <img src="" alt="" />
+            <span>Import Trade</span>
+          </button>
+        </div>
       </div>
     </div>
   );
