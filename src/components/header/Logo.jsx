@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import "./logo.css";
-import MyContext from "../context/MyContext";
+import "../../styles/logo.css";
+import MyContext from "../../context/MyContext";
 function Logo() {
   const { toggleSideBar } = useContext(MyContext);
   const handleToggleSidebar = () => {
@@ -9,10 +9,10 @@ function Logo() {
   };
   return (
     <div className="d-flex align-items-center justify-content-between">
-      <a href="/" className="d-flex align-item-center logo">
+      {/* <a href="/" className="d-flex align-item-center logo">
         <img src="" alt="" />
         <span className="d-none d-lg-block">Tradeboard</span>
-      </a>
+      </a> */}
       <i
         className="bi bi-list toggle-sidebar-btn"
         onClick={handleToggleSidebar}

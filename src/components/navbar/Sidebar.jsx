@@ -1,28 +1,28 @@
 import React, { useContext, useState } from "react";
-import "./sidebar.css";
-import MyContext from "../context/MyContext";
-import CategoryIcon from "../images/Category.png";
-import accountIcon from "../images/account.png";
-import Account_partnerIcon from "../images/Account_Partner.png";
-import performance_analyticsIcon from "../images/performance_analytics.png";
-import DocumentIcon from "../images/Document.png";
+import "../../styles/sidebar.css";
+import MyContext from "../../context/MyContext";
+import CategoryIcon from "../../assets/images/Category.png";
+import accountIcon from "../../assets/images/account.png";
+import Account_partnerIcon from "../../assets/images/Account_Partner.png";
+import performance_analyticsIcon from "../../assets/images/performance_analytics.png";
+import DocumentIcon from "../../assets/images/Document.png";
 
 function Sidebar() {
   const { isSideBarOpen, setIsSideBarOpen } = useContext(MyContext);
   const [navOptions, setNavOptions] = useState([
     { name: "Dashboard", isSelected: true, icon: CategoryIcon },
-    { name: "My Journal", isSelected: false, icon: "bi bi-file-text" },
+    { name: "My Journal", isSelected: false, icon: DocumentIcon },
     {
       name: "Performance Analytics",
       isSelected: false,
-      icon: "bi bi-suitcase-lg",
+      icon: performance_analyticsIcon,
     },
     {
       name: "Accountability Partner",
       isSelected: false,
-      icon:"bi bi-people",
+      icon:Account_partnerIcon,
     },
-    { name: "My Account", isSelected: false, icon: "bi bi-person" },
+    { name: "My Account", isSelected: false, icon: accountIcon },
   ]);
 
   const onClickNavItem = (index) => {
@@ -38,16 +38,16 @@ function Sidebar() {
   };
 
   return (
-    <div
+    <aside
       style={{
-        transform: isSideBarOpen ? "translateX(0)" : "translateX(-100%)",
+        //transform: isSideBarOpen ? "translateX(0)" : "translateX(-100%)",
       }}
-      className={`sidebar`}
+      className="sidebar"
     >
       <div>
         <a href="/" className="d-flex align-item-center logo">
           <img src="" alt="" />
-          <span className="d-none d-lg-block">Tradeboard</span>
+          <span className="heading">Tradeboard</span>
         </a>
         <ul className="dashboard-nav-container">
           {navOptions.map((item, index) => {
@@ -62,19 +62,19 @@ function Sidebar() {
                 }}
               >
                 <a href="#">
-                  {/* <img
+                  <img
                     src={item.icon}
                     alt=""
                     className="dashboard-icon"
                     style={{ color: item.isSelected ? "white" : "black" }}
-                  /> */}
-                  <i
+                  />
+                  {/* <i
                     className={`${item.icon} ${
                       item.isSelected ? "text-white" : "text-black"
                     }`}
                     style={{ fontSize: "2rem" }}
-                  ></i>
-                  <span style={{ color: item.isSelected ? "white" : "black" }}>
+                  ></i> */}
+                  <span style={{ color: item.isSelected ? "white" : "black",fontSize:14,fontWeight: '400', }}>
                     {item.name}
                   </span>
                 </a>
@@ -87,13 +87,14 @@ function Sidebar() {
           <li>My Account</li> */}
         </ul>
       </div>
-      <div>
+
+      <div style={{borderWidth: 1,}}>
         <ul>
           <li>Contact support</li>
           <li>Logout</li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 }
 

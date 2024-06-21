@@ -1,5 +1,5 @@
 import React from "react";
-import profileIcon from "../images/profile.png";
+import profileIcon from "../../assets/images/profile.png";
 
 function NavAvatar() {
   return (

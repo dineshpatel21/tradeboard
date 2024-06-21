@@ -1,5 +1,5 @@
 import React from "react";
-import themeIcon from "../images/theme.png";
+import themeIcon from "../../assets/images/theme.png";
 
 function NavMessage() {
   return (
