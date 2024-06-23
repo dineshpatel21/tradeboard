@@ -4,6 +4,7 @@ import "../../styles/mainsection.css";
 import Attach from "./Attach";
 import RichText from "./RichText";
 import MyRule from "./MyRule";
+import TradeLog from "./TradeLog";
 
 function MainSection() {
   return (
@@ -32,19 +33,7 @@ function MainSection() {
         <MyRule />
       </div>
 
-      <div class="d-flex justify-content-between">
-        <h2>Trade Log</h2>
-        <div>
-          <button>
-            <img src="" alt="" />
-            <span>Add Trade</span>
-          </button>
-          <button>
-            <img src="" alt="" />
-            <span>Import Trade</span>
-          </button>
-        </div>
-      </div>
+      <TradeLog />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+.trade-table th{
+    width: 180px;
+    height: 40px;
+    background-color: rgba(231, 231, 231, 1);
+    text-align: start;
+    border: 1px solid black;
+}
+
+.trade-table td{
+    width: 180px;
+    height: 40px;
+    text-align: start;
+    border :1px solid black
+}
