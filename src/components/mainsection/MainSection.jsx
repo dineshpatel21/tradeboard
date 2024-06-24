@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/mainsection.css";
-
 import Attach from "./Attach";
 import RichText from "./RichText";
 import MyRule from "./MyRule";
@@ -22,18 +21,32 @@ function MainSection() {
 
       <div className="today-my-rule-section">
         <div className="today-journal">
-          <div>
-            <div className="today-journal-heading">
+        <div className="today-journal-heading">
               Today’s Journal <span>(Saving)</span>
             </div>
-            <RichText />
-          </div>
+            <input
+              type="text"
+              placeholder="Type your notes here"
+              style={{ paddingLeft: 24, paddingRight: 24, marginBottom: 12,width:'100%',height:140 }}
+            />
+
+            <input
+              type="text"
+              placeholder="Type your mistake here"
+              style={{ paddingLeft: 24, paddingRight: 24, marginBottom: 12,width:'100%',height:140 }}
+            />
+
+            <input
+              type="text"
+              placeholder="Type your lessons here"
+              style={{ paddingLeft: 24, paddingRight: 24,width:'100%',height:140 }}
+            />
           <Attach />
         </div>
         <MyRule />
       </div>
 
-      <TradeLog />
+      {/* <TradeLog /> */}
     </div>
   );
 }

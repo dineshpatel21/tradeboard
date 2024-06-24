@@ -2,16 +2,35 @@ import React, { useState, useEffect } from "react";
 import MyContext from "./MyContext";
 
 function MyState({ children }) {
-  const [isSideBarOpen, setIsSideBarOpen] = useState(false);
+  const [isLeftSideBarOpen, setIsLeftSideBarOpen] = useState(true);
+  const [isRightSideBarOpen, setIsRightSideBarOpen] = useState(true);
+  const [isBottomSideBarOpen, setIsBottomSideBarOpen] = useState(true);
   const [isTradeOpen, setIsTradeOpen] = useState(false);
 
-  const toggleSideBar = () => {
-    setIsSideBarOpen(!isSideBarOpen);
+  const toggleLeftSideBar = () => {
+    setIsLeftSideBarOpen(!isLeftSideBarOpen);
+  };
+
+  const toggleRightSideBar = () => {
+    setIsRightSideBarOpen(!isRightSideBarOpen);
+  };
+
+  const toggleBottomSideBar = () => {
+    setIsBottomSideBarOpen(!isBottomSideBarOpen);
   };
 
   return (
     <MyContext.Provider
-      value={{ isSideBarOpen, toggleSideBar, isTradeOpen, setIsTradeOpen }}
+      value={{
+        isLeftSideBarOpen,
+        isRightSideBarOpen,
+        isBottomSideBarOpen,
+        toggleRightSideBar,
+        toggleBottomSideBar,
+        toggleLeftSideBar,
+        isTradeOpen,
+        setIsTradeOpen,
+      }}
     >
       {children}
     </MyContext.Provider>

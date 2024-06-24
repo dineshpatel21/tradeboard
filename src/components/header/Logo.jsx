@@ -9,14 +9,14 @@ function Logo() {
   };
   return (
     <div className="d-flex align-items-center justify-content-between">
-      {/* <a href="/" className="d-flex align-item-center logo">
+      <a href="/" className="d-flex align-item-center logo">
         <img src="" alt="" />
         <span className="d-none d-lg-block">Tradeboard</span>
-      </a> */}
-      <i
+      </a>
+      {/* <i
         className="bi bi-list toggle-sidebar-btn"
         onClick={handleToggleSidebar}
-      ></i>
+      ></i> */}
     </div>
   );
 }

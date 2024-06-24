@@ -6,9 +6,15 @@ import accountIcon from "../../assets/images/account.png";
 import Account_partnerIcon from "../../assets/images/Account_Partner.png";
 import performance_analyticsIcon from "../../assets/images/performance_analytics.png";
 import DocumentIcon from "../../assets/images/Document.png";
+import logoutIcon from "../../assets/images/logout.png";
+import contactIcon from "../../assets/images/contact.png";
+import lockIcon from "../../assets/images/lock.png";
+import leftsideIcon from "../../assets/icons/left-side.png";
+import rightsideIcon from "../../assets/icons/right-side.png";
 
 function Sidebar() {
-  const { isSideBarOpen, setIsSideBarOpen } = useContext(MyContext);
+  const { isLeftSideBarOpen, setIsLeftSideBarOpen, toggleLeftSideBar } =
+    useContext(MyContext);
   const [navOptions, setNavOptions] = useState([
     { name: "Dashboard", isSelected: true, icon: CategoryIcon },
     { name: "My Journal", isSelected: false, icon: DocumentIcon },
@@ -20,7 +26,7 @@ function Sidebar() {
     {
       name: "Accountability Partner",
       isSelected: false,
-      icon:Account_partnerIcon,
+      icon: Account_partnerIcon,
     },
     { name: "My Account", isSelected: false, icon: accountIcon },
   ]);
@@ -37,18 +43,33 @@ function Sidebar() {
     setNavOptions(newNavOptions);
   };
 
+  const handleToggleSidebar = () => {
+    toggleLeftSideBar();
+  };
+
   return (
     <aside
       style={{
-        //transform: isSideBarOpen ? "translateX(0)" : "translateX(-100%)",
+        position: "relative",
+        left: isLeftSideBarOpen ? 0 : -289,
+        transition:"left 0.3s ease-in-out",
+        backgroundColor:"white",
+        height:'100%'
       }}
-      className="sidebar"
     >
+      <div
+        className="position-absolute trade-log-table-table"
+        style={{ top: "50%", right: -10, cursor: "pointer",zIndex: 999, }}
+        onClick={() => toggleLeftSideBar()}
+      >
+        <img
+          src={leftsideIcon}
+          alt="left icon"
+          style={{ width: 6, height: 12 }}
+        />
+      </div>
+
       <div>
-        <a href="/" className="d-flex align-item-center logo">
-          <img src="" alt="" />
-          <span className="heading">Tradeboard</span>
-        </a>
         <ul className="dashboard-nav-container">
           {navOptions.map((item, index) => {
             return (
@@ -68,31 +89,41 @@ function Sidebar() {
                     className="dashboard-icon"
                     style={{ color: item.isSelected ? "white" : "black" }}
                   />
-                  {/* <i
-                    className={`${item.icon} ${
-                      item.isSelected ? "text-white" : "text-black"
-                    }`}
-                    style={{ fontSize: "2rem" }}
-                  ></i> */}
-                  <span style={{ color: item.isSelected ? "white" : "black",fontSize:14,fontWeight: '400', }}>
+
+                  <span
+                    style={{
+                      color: item.isSelected ? "white" : "black",
+                      fontSize: 14,
+                      fontWeight: "400",
+                    }}
+                  >
                     {item.name}
                   </span>
                 </a>
               </li>
             );
           })}
-          {/* <li>My Journal</li>
-          <li>Performance Analytics</li>
-          <li>Accountability Partner</li>
-          <li>My Account</li> */}
         </ul>
       </div>
 
-      <div style={{borderWidth: 1,}}>
-        <ul>
-          <li>Contact support</li>
-          <li>Logout</li>
-        </ul>
+      <div className="d-flex  flex-column">
+        <div className="d-flex  flex-column lock-container">
+          <img src={lockIcon} alt="lock-icon" />
+          <p>Upgrade to PRO for more features.</p>
+          <button>
+            <span>Upgrade</span>
+          </button>
+        </div>
+        {/* <ul>
+        <li className="lsidebar-logout">
+          <img src={contactIcon} alt="contact" />
+          <a>Contact support</a>
+        </li>
+        <li className="lsidebar-logout">
+          <img src={logoutIcon} alt="logout" />
+          <a>Logout</a>
+        </li>
+      </ul> */}
       </div>
     </aside>
   );

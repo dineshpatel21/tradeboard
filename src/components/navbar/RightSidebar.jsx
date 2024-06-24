@@ -7,9 +7,10 @@ import accountIcon from "../../assets/images/account.png";
 import Account_partnerIcon from "../../assets/images/Account_Partner.png";
 import performance_analyticsIcon from "../../assets/images/performance_analytics.png";
 import DocumentIcon from "../../assets/images/Document.png";
+import rightsideIcon from "../../assets/icons/right-side.png";
 
 function RightSidebar() {
-  const { isSideBarOpen, setIsSideBarOpen } = useContext(MyContext);
+  const { isRightSideBarOpen, toggleRightSideBar } = useContext(MyContext);
   const [navOptions, setNavOptions] = useState([
     { name: "Dashboard", isSelected: true, icon: CategoryIcon },
     { name: "My Journal", isSelected: false, icon: "bi bi-file-text" },
@@ -39,20 +40,33 @@ function RightSidebar() {
   };
 
   return (
-    isSideBarOpen && (
+    <aside
+      className="rsidebar "
+      style={{
+        position: "relative",
+        // right: isRightSideBarOpen ? 0 : -289,
+        width: isRightSideBarOpen ? 0 : "100%",
+      }}
+    >
       <div
+        className="position-absolute trade-log-table-table"
         style={{
-          //transform: isSideBarOpen ? "translateX(0)" : "translateX(100%)",
+          top: "50%",
+          left: -5,
+          cursor: "pointer",
+          display: !isRightSideBarOpen && "none",
         }}
-        className={`rsidebar`}
+        onClick={() => toggleRightSideBar()}
       >
-        <span>Performance</span>
-        <div className="box">No of Trades (Daily order limit: 4)</div>
-        <div className="box">Winning vs Losing Trades</div>
-        <div className="box">Profit & Loss</div>
-        <div className="box">Rule Score</div>
+        <img
+          src={rightsideIcon}
+          alt="left icon"
+          style={{ width: 6, height: 12 }}
+        />
       </div>
-    )
+
+      <div>Performance</div>
+    </aside>
   );
 }
 

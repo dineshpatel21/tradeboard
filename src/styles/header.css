@@ -1,9 +1,8 @@
 .header {
-    /* position: fixed; */
+    position: relative;
     transition: all 0.5s;
     z-index: 996px;
-    /* width: 100%; */
-   
+    width: 100%;
     height: 60px;
     /* padding-left: 20px; */
     background-color: #fff;
