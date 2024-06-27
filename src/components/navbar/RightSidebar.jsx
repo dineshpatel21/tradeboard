@@ -53,26 +53,36 @@ function RightSidebar() {
     //     width: isRightSideBarOpen ? 0 : "100%",
     //   }}
     // >
-    //   <div
-    //     className="position-absolute trade-log-table-table"
-    //     style={{
-    //       top: "50%",
-    //       left: -5,
-    //       cursor: "pointer",
-    //       display: !isRightSideBarOpen && "none",
-    //     }}
-    //     onClick={() => toggleRightSideBar()}
-    //   >
-    //     <img
-    //       src={rightsideIcon}
-    //       alt="left icon"
-    //       style={{ width: 6, height: 12 }}
-    //     />
-    //   </div>
+
     // </aside>
-    <div style={{ width: "100%",paddingLeft:14,paddingRight:14,backgroundColor:'#fff' }} className="d-flex flex-column ">
+    <div
+      style={{
+        width: "100%",
+        paddingLeft: 14,
+        paddingRight: 14,
+        backgroundColor: "#fff",
+        position:'relative'
+      }}
+      className="d-flex flex-column "
+    >
+      <div
+        className="position-absolute trade-log-table-table"
+        style={{
+          top: "50%",
+          left: -5,
+          cursor: "pointer",
+          display: !isRightSideBarOpen && "none",
+        }}
+        onClick={() => toggleRightSideBar()}
+      >
+        <img
+          src={rightsideIcon}
+          alt="left icon"
+          style={{ width: 6, height: 12 }}
+        />
+      </div>
       <div style={{ marginTop: 32 }}>
-        <CalendarChart/>
+        <CalendarChart />
         <TradesTaken />
         <WinChartRate />
         <ProfitLossChart />
