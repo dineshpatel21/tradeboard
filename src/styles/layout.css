@@ -35,6 +35,7 @@
 .layout-main-content {
   background-color: rgba(241, 241, 242, 1);
   /* padding: 20px; */
+  margin-top: 60;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   display: flex;
@@ -81,4 +82,19 @@
   .layout-main-content {
     grid-column: 1/2;
   }
+}
+
+.layout1-container {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.layout1-header {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.layout1-sidebar {
+  grid-column-start: 1;
+  grid-row-end: 3;
 }

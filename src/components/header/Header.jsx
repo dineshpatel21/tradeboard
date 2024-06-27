@@ -12,9 +12,9 @@ function Header() {
       //id="header"
       style={{
         // width: isSideBarOpen ? "80%" : "100%",
-        // position:  "fixed",
+        //position:  "fixed",
       }}
-      className="header d-flex align-items-center"
+      className="header d-flex align-items-center lay-header"
     >
       {/* {Logo} */}
       <Logo />

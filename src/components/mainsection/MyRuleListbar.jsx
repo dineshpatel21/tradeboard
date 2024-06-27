@@ -15,7 +15,7 @@ function MyRuleListbar({ ruleList }) {
           <span>Action</span>
         </div>
       </div>
-      <div style={{height:"14rem",overflow: 'auto',}}>
+      <div style={{height:"16rem",overflow: 'auto',}}>
       {ruleList.map((item, index) => {
         return <RuleListItem ruleList={ruleList} index={index}/>;
       })}

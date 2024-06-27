@@ -8,6 +8,11 @@ import Account_partnerIcon from "../../assets/images/Account_Partner.png";
 import performance_analyticsIcon from "../../assets/images/performance_analytics.png";
 import DocumentIcon from "../../assets/images/Document.png";
 import rightsideIcon from "../../assets/icons/right-side.png";
+import ProfitLossChart from "../charts/ProfitLossChart";
+import RulesChart from "../charts/RulesChart";
+import TradesTaken from "../charts/TradesTaken";
+import WinChartRate from "../charts/WinChartRate";
+import CalendarChart from "../charts/CalendarChart";
 
 function RightSidebar() {
   const { isRightSideBarOpen, toggleRightSideBar } = useContext(MyContext);
@@ -40,33 +45,40 @@ function RightSidebar() {
   };
 
   return (
-    <aside
-      className="rsidebar "
-      style={{
-        position: "relative",
-        // right: isRightSideBarOpen ? 0 : -289,
-        width: isRightSideBarOpen ? 0 : "100%",
-      }}
-    >
-      <div
-        className="position-absolute trade-log-table-table"
-        style={{
-          top: "50%",
-          left: -5,
-          cursor: "pointer",
-          display: !isRightSideBarOpen && "none",
-        }}
-        onClick={() => toggleRightSideBar()}
-      >
-        <img
-          src={rightsideIcon}
-          alt="left icon"
-          style={{ width: 6, height: 12 }}
-        />
+    // <aside
+    //   className="rsidebar lay-rightsidebar"
+    //   style={{
+    //     position: "relative",
+    //     // right: isRightSideBarOpen ? 0 : -289,
+    //     width: isRightSideBarOpen ? 0 : "100%",
+    //   }}
+    // >
+    //   <div
+    //     className="position-absolute trade-log-table-table"
+    //     style={{
+    //       top: "50%",
+    //       left: -5,
+    //       cursor: "pointer",
+    //       display: !isRightSideBarOpen && "none",
+    //     }}
+    //     onClick={() => toggleRightSideBar()}
+    //   >
+    //     <img
+    //       src={rightsideIcon}
+    //       alt="left icon"
+    //       style={{ width: 6, height: 12 }}
+    //     />
+    //   </div>
+    // </aside>
+    <div style={{ width: "100%",paddingLeft:14,paddingRight:14,backgroundColor:'#fff' }} className="d-flex flex-column ">
+      <div style={{ marginTop: 32 }}>
+        <CalendarChart/>
+        <TradesTaken />
+        <WinChartRate />
+        <ProfitLossChart />
+        <RulesChart />
       </div>
-
-      <div>Performance</div>
-    </aside>
+    </div>
   );
 }
 

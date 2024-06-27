@@ -4,6 +4,11 @@ import Attach from "./Attach";
 import RichText from "./RichText";
 import MyRule from "./MyRule";
 import TradeLog from "./TradeLog";
+import ProfitLossChart from "../charts/ProfitLossChart";
+import WinChartRate from "../charts/WinChartRate";
+import RulesChart from "../charts/RulesChart";
+import TradesTaken from "../charts/TradesTaken"
+
 
 function MainSection() {
   return (
@@ -21,30 +26,48 @@ function MainSection() {
 
       <div className="today-my-rule-section">
         <div className="today-journal">
-        <div className="today-journal-heading">
-              Today’s Journal <span>(Saving)</span>
-            </div>
-            <input
-              type="text"
-              placeholder="Type your notes here"
-              style={{ paddingLeft: 24, paddingRight: 24, marginBottom: 12,width:'100%',height:140 }}
-            />
+          <div className="today-journal-heading">
+            Today’s Journal <span>(Saving)</span>
+          </div>
+          <input
+            type="text"
+            placeholder="Type your notes here"
+            style={{
+              paddingLeft: 24,
+              paddingRight: 24,
+              marginBottom: 12,
+              width: "100%",
+              // height: 140,
+            }}
+          />
 
-            <input
-              type="text"
-              placeholder="Type your mistake here"
-              style={{ paddingLeft: 24, paddingRight: 24, marginBottom: 12,width:'100%',height:140 }}
-            />
+          <input
+            type="text"
+            placeholder="Type your mistake here"
+            style={{
+              paddingLeft: 24,
+              paddingRight: 24,
+              marginBottom: 12,
+              width: "100%",
+              // height: 140,
+            }}
+          />
 
-            <input
-              type="text"
-              placeholder="Type your lessons here"
-              style={{ paddingLeft: 24, paddingRight: 24,width:'100%',height:140 }}
-            />
+          <input
+            type="text"
+            placeholder="Type your lessons here"
+            style={{
+              paddingLeft: 24,
+              paddingRight: 24,
+              width: "100%",
+              // height: 140,
+            }}
+          />
           <Attach />
         </div>
         <MyRule />
       </div>
+      
 
       {/* <TradeLog /> */}
     </div>

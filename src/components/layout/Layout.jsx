@@ -24,7 +24,7 @@ function Layout() {
 
       <div
         className="layout-sidebar "
-        style={{ width: isLeftSideBarOpen ? "280px" : "0px" }}
+        style={{ width: isLeftSideBarOpen ? "15rem" : "5rem"}}
       >
         <Sidebar />
       </div>
@@ -44,6 +44,13 @@ function Layout() {
         <RightSidebar />
       </div>
     </div>
+
+    // <div className="layout1-container">
+    //   <div className="layout1-header"><Header/></div>
+    //   <div className="layout1-sidebar"><Sidebar/></div>
+    //   <div ><MainSection/></div>
+    //   <div ><RightSidebar/></div>
+    // </div>
 
     // <div className="position-relative ">
     //   <Header />

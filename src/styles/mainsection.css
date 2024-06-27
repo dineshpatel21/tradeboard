@@ -12,6 +12,7 @@
   padding-left: 24px;
   padding-right: 24px;
   padding-bottom: 24px;
+  /* padding-top: 5rem; */
   position: relative;
   /* border:1px solid red; */
   height: 100vh;
@@ -54,12 +55,12 @@
 }
 
 .today-my-rule-section {
-  /* display: grid;
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows:min-content; */
-  display: flex;
+  /* grid-auto-rows:min-content; */
+  /* display: flex;
   flex-direction: row;
-  height: 380px;
+  height: 380px; */
   margin-top: 16px;
 }
 .today-journal {
