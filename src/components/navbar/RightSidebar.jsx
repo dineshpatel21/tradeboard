@@ -55,40 +55,44 @@ function RightSidebar() {
     // >
 
     // </aside>
-    <div
-      style={{
-        width: "100%",
-        paddingLeft: 14,
-        paddingRight: 14,
-        backgroundColor: "#fff",
-        position:'relative'
-      }}
-      className="d-flex flex-column "
-    >
+    isRightSideBarOpen && (
       <div
-        className="position-absolute trade-log-table-table"
         style={{
-          top: "50%",
-          left: -5,
-          cursor: "pointer",
-          display: !isRightSideBarOpen && "none",
+          width: "100%",
+          paddingLeft: 14,
+          paddingRight: 14,
+          backgroundColor: "#fff",
+          position: "relative",
+          width: isRightSideBarOpen ? "280px" : "0px",
+          transition: "width 0.3s ease-in-out",
         }}
-        onClick={() => toggleRightSideBar()}
+        className="d-flex flex-column "
       >
-        <img
-          src={rightsideIcon}
-          alt="left icon"
-          style={{ width: 6, height: 12 }}
-        />
+        <div
+          className="position-absolute trade-log-table-table"
+          style={{
+            top: "50%",
+            left: -5,
+            cursor: "pointer",
+            display: !isRightSideBarOpen && "none",
+          }}
+          onClick={() => toggleRightSideBar()}
+        >
+          <img
+            src={rightsideIcon}
+            alt="left icon"
+            style={{ width: 6, height: 12 }}
+          />
+        </div>
+        <div style={{ marginTop: 32 }}>
+          <CalendarChart />
+          <TradesTaken />
+          <WinChartRate />
+          <ProfitLossChart />
+          <RulesChart />
+        </div>
       </div>
-      <div style={{ marginTop: 32 }}>
-        <CalendarChart />
-        <TradesTaken />
-        <WinChartRate />
-        <ProfitLossChart />
-        <RulesChart />
-      </div>
-    </div>
+    )
   );
 }
 

@@ -24,7 +24,7 @@ function Layout() {
 
       <div
         className="layout-sidebar "
-        style={{ width: isLeftSideBarOpen ? "15rem" : "5rem"}}
+        style={{ width: isLeftSideBarOpen ? "15rem" : "5rem" }}
       >
         <Sidebar />
       </div>
@@ -38,11 +38,13 @@ function Layout() {
         className="layout-rsidebar right"
         style={{
           width: isRightSideBarOpen ? "280px" : "0px",
-          display: !isRightSideBarOpen ? "none" : "flex",
+          transition: "width 0.3s ease-in-out",
+          //display: !isRightSideBarOpen ? "none" : "flex",
         }}
       >
         <RightSidebar />
       </div>
+      {/* <RightSidebar /> */}
     </div>
 
     // <div className="layout1-container">
